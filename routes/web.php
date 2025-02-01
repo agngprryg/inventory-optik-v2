@@ -120,3 +120,6 @@ Route::group(['prefix' => 'icons'], function () {
 //Extra Page Routs
 Route::get('privacy-policy', [HomeController::class, 'privacypolicy'])->name('pages.privacy-policy');
 Route::get('terms-of-use', [HomeController::class, 'termsofuse'])->name('pages.term-of-use');
+
+
+// List Produk
