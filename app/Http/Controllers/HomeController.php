@@ -21,27 +21,27 @@ class HomeController extends Controller
     public function horizontal(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.horizontal',compact('assets'));
+        return view('menu-style.horizontal', compact('assets'));
     }
     public function dualhorizontal(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.dual-horizontal',compact('assets'));
+        return view('menu-style.dual-horizontal', compact('assets'));
     }
     public function dualcompact(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.dual-compact',compact('assets'));
+        return view('menu-style.dual-compact', compact('assets'));
     }
     public function boxed(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.boxed',compact('assets'));
+        return view('menu-style.boxed', compact('assets'));
     }
     public function boxedfancy(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.boxed-fancy',compact('assets'));
+        return view('menu-style.boxed-fancy', compact('assets'));
     }
 
     /*
@@ -55,7 +55,7 @@ class HomeController extends Controller
     public function calender(Request $request)
     {
         $assets = ['calender'];
-        return view('special-pages.calender',compact('assets'));
+        return view('special-pages.calender', compact('assets'));
     }
 
     public function kanban(Request $request)
@@ -180,7 +180,7 @@ class HomeController extends Controller
         return view('forms.validation');
     }
 
-     /*
+    /*
      * Table Page Routs
      */
     public function bootstraptable(Request $request)

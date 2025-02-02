@@ -2,6 +2,7 @@
 
 // Controllers
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MerekController;
 use App\Http\Controllers\Security\RolePermission;
 use App\Http\Controllers\Security\RoleController;
 use App\Http\Controllers\Security\PermissionController;
@@ -30,6 +31,12 @@ Route::get('/storage', function () {
 //UI Pages Routs
 Route::get('/', [HomeController::class, 'uisheet'])->name('uisheet');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+
+Route::prefix('produk')->group(function () {
+    Route::resource('merek', MerekController::class);
+});
+
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -120,6 +127,3 @@ Route::group(['prefix' => 'icons'], function () {
 //Extra Page Routs
 Route::get('privacy-policy', [HomeController::class, 'privacypolicy'])->name('pages.privacy-policy');
 Route::get('terms-of-use', [HomeController::class, 'termsofuse'])->name('pages.term-of-use');
-
-
-// List Produk
