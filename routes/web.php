@@ -1,12 +1,15 @@
 <?php
 
 // Controllers
+
+use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\Security\RolePermission;
 use App\Http\Controllers\Security\RoleController;
 use App\Http\Controllers\Security\PermissionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VariasiController;
 use Illuminate\Support\Facades\Artisan;
 // Packages
 use Illuminate\Support\Facades\Route;
@@ -35,6 +38,8 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::prefix('produk')->group(function () {
     Route::resource('merek', MerekController::class);
+    Route::resource('distributor', DistributorController::class);
+    Route::resource('variasi', VariasiController::class);
 });
 
 

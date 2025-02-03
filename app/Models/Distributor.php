@@ -9,5 +9,5 @@ class Distributor extends Model
 {
     use HasFactory;
     protected $table = 'distributor';
-    protected $fillable = ['nama_distributor'];
+    protected $fillable = ['nama_distributor', 'logo', 'no_telepon', 'email', 'alamat'];
 }

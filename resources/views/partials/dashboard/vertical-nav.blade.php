@@ -85,8 +85,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ activeRoute(route('special-pages.kanban')) }}"
-                    href="{{ route('special-pages.kanban') }}">
+                <a class="nav-link {{ activeRoute(route('variasi.index')) }}" href="{{ route('variasi.index') }}">
                     <i class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                             <g>
@@ -145,8 +144,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ activeRoute(route('special-pages.timeline')) }}"
-                    href="{{ route('special-pages.timeline') }}">
+                <a class="nav-link {{ activeRoute(route('distributor.index')) }}"
+                    href="{{ route('distributor.index') }}">
                     <i class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
                             fill="currentColor">
