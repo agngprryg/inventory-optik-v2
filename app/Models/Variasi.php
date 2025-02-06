@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Variasi extends Model
 {
     use HasFactory;
+
     protected $table = 'variasi';
-    protected $fillable = ['kategori_id', 'nama_variasi', 'tipe', 'opsi'];
+    protected $fillable = ['nama_variasi', 'tipe', 'opsi'];
 
     protected $casts = [
         'opsi' => 'array',
     ];
 
-    public function kategori()
+    // Relasi Many to Many dengan Kategori
+    public function kategoris()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id');
+        return $this->belongsToMany(Kategori::class, 'kategori_variasi');
     }
 }

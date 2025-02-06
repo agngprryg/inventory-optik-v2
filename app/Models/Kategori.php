@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory;
+
     protected $table = 'kategori';
     protected $fillable = ['nama_kategori'];
 
-    public function subKategori()
+    // Relasi Many to Many dengan Variasi
+    public function variasis()
     {
-        return $this->hasMany(SubKategori::class, 'id_kategori');
+        return $this->belongsToMany(Variasi::class, 'kategori_variasi');
     }
 }

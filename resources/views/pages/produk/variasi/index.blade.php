@@ -19,7 +19,6 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Kategori</th>
                                     <th>Nama Variasi</th>
                                     <th>Tipe</th>
                                     <th>Opsi</th>
@@ -30,13 +29,6 @@
                                 @foreach ($variasis as $variasi)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>
-                                            @if ($variasi->idkategori > 0)
-                                                {{ $variasi->kategori->nama_kategori }}
-                                            @else
-                                                tidak ada kategori
-                                            @endif
-                                        </td>
                                         <td>{{ $variasi->nama_variasi }}</td>
                                         <td>{{ $variasi->tipe }}</td>
                                         <td>

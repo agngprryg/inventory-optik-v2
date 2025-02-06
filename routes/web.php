@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\Security\RolePermission;
 use App\Http\Controllers\Security\RoleController;
@@ -40,6 +41,7 @@ Route::prefix('produk')->group(function () {
     Route::resource('merek', MerekController::class);
     Route::resource('distributor', DistributorController::class);
     Route::resource('variasi', VariasiController::class);
+    Route::resource('kategori', KategoriController::class);
 });
 
 
