@@ -5,6 +5,7 @@
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SatuanController;
@@ -47,6 +48,12 @@ Route::prefix('produk')->group(function () {
     Route::resource('kategori', KategoriController::class);
     Route::resource('satuan', SatuanController::class);
 });
+
+Route::prefix('role')->group(function () {
+    Route::resource('manager', ManagerController::class);
+});
+
+
 
 
 
