@@ -9,28 +9,32 @@ class SatuanController extends Controller
 {
     public function index()
     {
-        return Satuan::all();
+        $satuans =  Satuan::all();
+        return view('pages.produk.satuan.index', compact('satuans'));
     }
 
     public function store(Request $request)
     {
-        return Satuan::create($request->all());
+        Satuan::create($request->all());
+
+        return redirect()->route('satuan.index')->with('success', 'data berhasil di tambahkan');
     }
 
-    public function show(Satuan $satuan)
+    public function show($id)
     {
-        return $satuan;
+        $satuan = Satuan::findOrFail($id);
+        return view('pages.produk.satuan.edit', compact('satuan'));
     }
 
     public function update(Request $request, Satuan $satuan)
     {
         $satuan->update($request->all());
-        return $satuan;
+        return redirect()->route('satuan.index')->with('success', 'data berhasil di update');
     }
 
     public function destroy(Satuan $satuan)
     {
         $satuan->delete();
-        return response()->json(['message' => 'Deleted successfully']);
+        return redirect()->route('satuan.index')->with('success', 'data berhasil di hapus');
     }
 }

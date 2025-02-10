@@ -9,5 +9,5 @@ class Satuan extends Model
 {
     use HasFactory;
     protected $table = 'satuan';
-    protected $fillable = ['nama_satuan'];
+    protected $fillable = ['nama_satuan', 'status'];
 }

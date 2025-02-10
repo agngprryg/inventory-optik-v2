@@ -13,7 +13,7 @@ class Kategori extends Model
     protected $fillable = ['nama_kategori'];
 
     // Relasi Many to Many dengan Variasi
-    public function variasis()
+    public function variasi()
     {
         return $this->belongsToMany(Variasi::class, 'kategori_variasi');
     }

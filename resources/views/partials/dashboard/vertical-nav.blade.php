@@ -57,8 +57,8 @@
         </a>
         <ul class="sub-nav collapse" id="sidebar-special-pages" data-bs-parent="#sidebar">
             <li class=" nav-item">
-                <a class="nav-link {{ activeRoute(route('special-pages.calender')) }}"
-                    href="{{ route('special-pages.calender') }}">
+                <a class="nav-link {{ activeRoute(route('list-produk.index')) }}"
+                    href="{{ route('list-produk.index') }}">
                     <i class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                             <g>
@@ -96,36 +96,6 @@
                     <span class="item-name">Variasi Produk</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ activeRoute(route('special-pages.pricing')) }}"
-                    href="{{ route('special-pages.pricing') }}">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <g>
-                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> A </i>
-                    <span class="item-name">Atur Stok</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ activeRoute(route('special-pages.rtlsupport')) }}"
-                    href="{{ route('special-pages.rtlsupport') }}">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <g>
-                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> T </i>
-                    <span class="item-name">Transfer Stok</span>
-                </a>
-            </li>
 
             <li class="nav-item">
                 <a class="nav-link {{ activeRoute(route('merek.index')) }}" href="{{ route('merek.index') }}">
@@ -157,6 +127,54 @@
                     <span class="item-name">Distributor</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link {{ activeRoute(route('satuan.index')) }}" href="{{ route('satuan.index') }}">
+                    <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <g>
+                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                            </g>
+                        </svg>
+                    </i>
+                    <i class="sidenav-mini-icon"> S </i>
+                    <span class="item-name">Satuan</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link {{ activeRoute(route('special-pages.pricing')) }}"
+                    href="{{ route('special-pages.pricing') }}">
+                    <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <g>
+                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                            </g>
+                        </svg>
+                    </i>
+                    <i class="sidenav-mini-icon"> A </i>
+                    <span class="item-name">Atur Stok</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link {{ activeRoute(route('special-pages.rtlsupport')) }}"
+                    href="{{ route('special-pages.rtlsupport') }}">
+                    <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <g>
+                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                            </g>
+                        </svg>
+                    </i>
+                    <i class="sidenav-mini-icon"> T </i>
+                    <span class="item-name">Transfer Stok</span>
+                </a>
+            </li>
+
         </ul>
     </li>
 

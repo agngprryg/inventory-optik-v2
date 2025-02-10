@@ -20,7 +20,7 @@
                                     <th>#</th>
                                     <th>Nama Kategori</th>
                                     <th>Variasi</th>
-                                    {{-- <th>Opsi</th> --}}
+                                    <th>Opsi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -30,27 +30,27 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td> {{ $kategori->nama_kategori }} </td>
                                         <td>
-                                            @if ($kategori->variasis->isEmpty())
+                                            @if ($kategori->variasi->isEmpty())
                                                 <span>Tidak ada variasi</span>
                                             @else
                                                 <ul>
-                                                    @foreach ($kategori->variasis as $variasi)
+                                                    @foreach ($kategori->variasi as $variasi)
                                                         <li>{{ $variasi->nama_variasi }}</li>
                                                     @endforeach
                                                 </ul>
                                             @endif
                                         </td>
-                                        {{-- <td>
-                                            @if ($kategori->variasis->isEmpty())
+                                        <td>
+                                            @if ($kategori->variasi->isEmpty())
                                                 tidak ada Opsi
                                             @else
                                                 <ul>
-                                                    @foreach ($kategori->variasis as $opsi)
+                                                    @foreach (json_decode($kategori->variasi) as $opsi)
                                                         <li>{{ $opsi->opsi }}</li>
                                                     @endforeach
                                                 </ul>
                                             @endif
-                                        </td> --}}
+                                        </td>
                                         <td>
                                             <a href="{{ route('kategori.show', $kategori->id) }}"
                                                 class="btn btn-warning btn-sm">Edit</a>

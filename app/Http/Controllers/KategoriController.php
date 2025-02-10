@@ -10,9 +10,10 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategoris = Kategori::with('variasis')->get();
-
+        $kategoris = Kategori::with('variasi')->get();
         return view('pages.produk.kategori.index', compact('kategoris'));
+
+        return Kategori::with('variasi')->get();
     }
 
     public function create()
@@ -36,7 +37,7 @@ class KategoriController extends Controller
         ]);
 
         if (!empty($validated['variasi_ids'])) {
-            $kategori->variasis()->attach($validated['variasi_ids']);
+            $kategori->variasi()->attach($validated['variasi_ids']);
         }
 
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil Di tambahkan');
@@ -64,9 +65,9 @@ class KategoriController extends Controller
         ]);
 
         if ($request->has('variasi_ids')) {
-            $kategori->variasis()->sync($validated['variasi_ids']); // Lebih praktis dari `detach()` + `attach()`
+            $kategori->variasi()->sync($validated['variasi_ids']); // Lebih praktis dari `detach()` + `attach()`
         } else {
-            $kategori->variasis()->detach(); // Hanya hapus relasi jika tidak ada variasi baru
+            $kategori->variasi()->detach(); // Hanya hapus relasi jika tidak ada variasi baru
         }
 
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil Di Update');
@@ -75,7 +76,7 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori)
     {
 
-        $kategori->variasis()->detach();
+        $kategori->variasi()->detach();
 
         $kategori->delete();
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MerekController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\Security\RolePermission;
 use App\Http\Controllers\Security\RoleController;
 use App\Http\Controllers\Security\PermissionController;
@@ -38,10 +40,12 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 
 Route::prefix('produk')->group(function () {
+    Route::resource('list-produk', ProdukController::class);
     Route::resource('merek', MerekController::class);
     Route::resource('distributor', DistributorController::class);
     Route::resource('variasi', VariasiController::class);
     Route::resource('kategori', KategoriController::class);
+    Route::resource('satuan', SatuanController::class);
 });
 
 

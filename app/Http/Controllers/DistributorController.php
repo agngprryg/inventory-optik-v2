@@ -67,7 +67,7 @@ class DistributorController extends Controller
             $logoPath = $distributor->logo;
         }
 
-        $distributor->update([
+        $data =  $distributor->update([
             'nama_distributor' => $request->nama_distributor,
             'logo' => $logoPath,
             'alamat' => $request->alamat,
@@ -75,6 +75,7 @@ class DistributorController extends Controller
             'no_telepon' => $request->no_telepon,
         ]);
 
+        return response()->json($data);
         return redirect()->route('distributor.index')->with('success', 'Data berhasil diperbarui!');
     }
 

@@ -29,7 +29,7 @@
                                             <option value="" disabled selected>Pilih Variasi</option>
                                             @foreach ($variasi as $item)
                                                 <option value="{{ $item->id }}"
-                                                    {{ $kategori->variasis->contains($item->id) ? 'selected' : '' }}>
+                                                    {{ $kategori->variasi->contains($item->id) ? 'selected' : '' }}>
                                                     {{ $item->nama_variasi }}</option>
                                             @endforeach
                                         </select>
