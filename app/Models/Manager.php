@@ -11,4 +11,9 @@ class Manager extends Model
 
     protected $table = 'manager';
     protected $fillable = ['nama_manager', 'foto', 'no_telepon', 'email', 'alamat'];
+
+    public function gudang()
+    {
+        return $this->hasMany(Gudang::class, 'id_gudang');
+    }
 }

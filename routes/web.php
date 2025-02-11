@@ -3,6 +3,7 @@
 // Controllers
 
 use App\Http\Controllers\DistributorController;
+use App\Http\Controllers\GudangController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ManagerController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Security\RoleController;
 use App\Http\Controllers\Security\PermissionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VariasiController;
+use App\Models\Gudang;
 use Illuminate\Support\Facades\Artisan;
 // Packages
 use Illuminate\Support\Facades\Route;
@@ -50,6 +52,7 @@ Route::prefix('produk')->group(function () {
 });
 
 Route::prefix('role')->group(function () {
+    Route::resource('gudang', GudangController::class);
     Route::resource('manager', ManagerController::class);
 });
 
