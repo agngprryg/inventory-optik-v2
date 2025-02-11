@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\MerekController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\Security\RolePermission;
@@ -53,6 +54,7 @@ Route::prefix('produk')->group(function () {
 });
 
 Route::prefix('role')->group(function () {
+    Route::resource('owner', OwnerController::class);
     Route::resource('gudang', GudangController::class);
     Route::resource('cabang', CabangController::class);
     Route::resource('manager', ManagerController::class);

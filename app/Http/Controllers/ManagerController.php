@@ -49,7 +49,17 @@ class ManagerController extends Controller
     {
         $manager = Manager::findOrFail($id);
 
-        $manager->update($request->all());
+        $logoPath = null;
+        if ($request->hasFile('foto')) {
+            $logoPath = $request->file('foto')->store('logos', 'public');
+        }
+        $manager->update([
+            'nama_manager' => $request->nama_manager,
+            'foto' => $logoPath,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'no_telepon' => $request->no_telepon,
+        ]);
 
         return redirect()->route('manager.index')->with('success', 'akun berhasil diupdate');
     }
