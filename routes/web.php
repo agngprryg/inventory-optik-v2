@@ -2,6 +2,7 @@
 
 // Controllers
 
+use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\HomeController;
@@ -53,6 +54,7 @@ Route::prefix('produk')->group(function () {
 
 Route::prefix('role')->group(function () {
     Route::resource('gudang', GudangController::class);
+    Route::resource('cabang', CabangController::class);
     Route::resource('manager', ManagerController::class);
 });
 

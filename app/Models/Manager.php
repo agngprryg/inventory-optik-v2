@@ -14,6 +14,11 @@ class Manager extends Model
 
     public function gudang()
     {
-        return $this->hasMany(Gudang::class, 'id_gudang');
+        return $this->hasMany(Gudang::class);
+    }
+
+    public function cabang()
+    {
+        return $this->hasMany(Cabang::class);
     }
 }
